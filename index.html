@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canes Game</title>
+    <link rel="stylesheet" href="./src/styles/styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <div>
+        <main class="container lg active" id="gameStart">
+          <h1 class="title spacing">Canes Game</h1>
+          <form id="gameStartForm">
+            <div class="input-container">
+              <label for="p1">Jogador 01</label>
+              <input id="p1" placeholder="Seu nome..." name="p1" />
+            </div>
+            <div class="input-container">
+              <label for="p2">Jogador 02</label>
+              <input id="p2" placeholder="Seu nome..." name="p2" />
+            </div>
+            <button class="button" type="submit">Jogar!</button>
+          </form>
+        </main>
+        <aside id="howToPlay" class="container sm max">
+          <div id="closeBar" class="flex spacing">
+            <h1 class="title">Como Jogar</h1>
+            <button class="close-button">x</button>
+          </div>
+          <ol class="flex description-list">
+            <li>
+              O objetivo do jogo é acertar qual a carta que forma par com a
+              carta apresentada no canto inferior esquerdo.
+            </li>
+            <li>
+              Cada jogador terá 3 chances de acertar, ganhando 3 pontos se
+              acertar de primeira, 2 na segunda e apenas um na terceira chance.
+            </li>
+            <li>
+              O jogo terá 3 rodadas, o jogador com mais pontos sera o vencedor.
+            </li>
+          </ol>
+        </aside>
+
+        <aside class="flex"><button class="question-box active">?</button></aside>
+      </div>
+    </div>
+    <script src="./src/scripts/gameStart.js"></script>
+  </body>
+</html>

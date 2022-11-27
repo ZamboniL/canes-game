@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canes Game</title>
+    <link rel="stylesheet" href="./src/styles/styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <main class="container sm">
+        <div id="playerChange">
+          <p>Agora é a vez do</p>
+          <p id="nextPlayer"></p>
+        </div>
+        <div class="info-section">
+          <div class="current-round-attempt">
+            <h2 id="player"></h2>
+            <h3 id="attempt"></h3>
+          </div>
+          <h1 class="title" id="round"></h1>
+        </div>
+        <div class="divider"></div>
+        <ul id="cardList"></ul>
+      </main>
+      <aside class="container sm objective">
+        <div id="objective"></div>
+        <span> Onde está a minha outra metade? </span>
+      </aside>
+    </div>
+    <script src="./src/scripts/game.js"></script>
+  </body>
+</html>

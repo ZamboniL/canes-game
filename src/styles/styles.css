@@ -1,0 +1,372 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Press Start 2P", cursive;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-weight: 400;
+  margin: unset;
+}
+
+.page {
+  background: #f9c131;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  gap: 20px;
+  grid-template-rows: 1fr auto;
+  grid-template-columns: 100%;
+}
+
+.container {
+  background: #ffffff;
+  width: 100%;
+  padding: 50px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 3px;
+  position: relative;
+}
+
+.title {
+  font-size: 24px;
+}
+
+.spacing {
+  padding-bottom: 50px;
+}
+
+#gameStartForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.input-container label {
+  padding-bottom: 10px;
+}
+
+.input-container input {
+  padding: 16px 20px;
+  font-size: 12px;
+  border: 1px solid #d4d4d4;
+  outline: none;
+  border-radius: 3px;
+}
+
+.input-container input::placeholder {
+  color: #bdbdbd;
+}
+
+.button {
+  background: #f9c131;
+  outline: none;
+  border: none;
+  padding: 16px 73px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.button.white {
+  background: #ffffff;
+}
+
+.button:hover {
+  background: #00000011;
+}
+
+.question-box {
+  display: none;
+  background: #ffffff;
+  border: 0px;
+  outline: 0px;
+  border-radius: 3px;
+  padding: 10px;
+  font-size: 20px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.question-box:hover {
+  background: #00000011;
+}
+
+.description-list {
+  gap: 30px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+#closeBar {
+  position: relative;
+  width: 100%;
+}
+
+.close-button {
+  border: 0px;
+  outline: 0px;
+  background: #131313;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 24px;
+  padding: 10px;
+  position: absolute;
+  right: 0px;
+  top: -12px;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  background: #000000a1;
+}
+
+#howToPlay,
+#gameStart {
+  display: none;
+}
+
+.question-box.active,
+#howToPlay.active,
+#gameStart.active {
+  display: flex;
+}
+
+#playerChange {
+  position: absolute;
+  top: -100000px;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  transition: opacity 0.2s ease-in;
+  display: flex;
+  opacity: 0;
+}
+
+#playerChange.active {
+  top: 0;
+  opacity: 1;
+}
+
+#nextPlayer {
+  font-size: 36px;
+  margin: 10px;
+}
+
+.info-section {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+.current-round-attempt {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.current-round-attempt h2 {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.current-round-attempt h3 {
+  font-size: 12px;
+  color: #959595;
+  margin: unset;
+}
+
+.divider {
+  border-bottom: 1px solid #d4d4d4;
+  width: 100%;
+  margin: 50px 0px;
+}
+
+#cardList {
+  list-style-type: none;
+  padding: unset;
+  margin: unset;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  border: 1px solid #d4d4d4;
+  perspective: 1000px;
+  width: 100px;
+  height: 100px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transform-style: preserve-3d;
+}
+
+.card-inner.open {
+  transform: rotateY(180deg);
+  transition: transform 0.3s ease-in;
+}
+
+.card-back {
+  color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-back img {
+  height: 48px;
+}
+
+.card-button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  font-size: 40px;
+  padding: 30px;
+  width: 100%;
+}
+
+.card-button:hover {
+  background: #00000011;
+}
+
+.card div,
+.card .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.objective {
+  margin: auto;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 20px;
+  max-width: 400px;
+}
+
+.play-again-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#tie,
+#win {
+  display: none;
+}
+
+#playAgain {
+  margin: 50px auto 0;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex.gap {
+  gap: 10px;
+}
+
+#winner {
+  margin: 30px 0px 50px;
+}
+
+.result-tilte {
+  font-size: 24px;
+  line-height: 24px;
+  margin: unset;
+}
+
+#winner h2,
+#winner h3 {
+  font-size: 14px;
+  line-height: 14px;
+  margin: 14px 0;
+}
+
+.points {
+  color: #959595;
+}
+
+@media (min-width: 600px) {
+  .container.sm {
+    width: unset;
+    padding: 50px;
+  }
+
+  .container.max {
+    max-width: 570px;
+  }
+
+  .container.lg {
+    width: unset;
+    padding: 50px 100px;
+  }
+
+  .input-container input {
+    width: 370px;
+  }
+
+  .info-section {
+    flex-direction: row;
+  }
+
+  .card-list {
+    flex-direction: row;
+  }
+
+  #winner h1 {
+    font-size: 36px;
+    line-height: 36px;
+  }
+}

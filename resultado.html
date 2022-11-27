@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canes Game</title>
+    <link rel="stylesheet" href="./src/styles/styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <div class="">
+        <div id="tie" class="container lg">
+          <h1 class="result-title spacing">EMPATE!</h1>
+          <div class="flex spacing gap">
+            <p id="p1Name"></p>
+            <p id="p1Score" class="points"></p>
+          </div>
+          <div class="flex gap">
+            <p id="p2Name"></p>
+            <p id="p2Score" class="points"></p>
+          </div>
+        </div>
+        <div id="win" class="container lg">
+          <img src="./src/assets/trophy.png" />
+          <div id="winner" class="flex">
+            <h3>Campeão!</h3>
+            <h1 class="result-title" id="winnerName">Jogador 01!</h1>
+            <h2 class="points" id="winnerScore">20 Pontos</h2>
+          </div>
+          <div id="loser" class="flex gap">
+            <p id="loserName">Jogador 02</p>
+            <p class="points" id="loserScore">19 pontos</p>
+          </div>
+        </div>
+        <aside class="play-again-container">
+          <button id="playAgain" class="button white">Jogar Novamente?</button>
+        </aside>
+      </div>
+    </div>
+    <script src="./src/scripts/victory.js"></script>
+  </body>
+</html>
